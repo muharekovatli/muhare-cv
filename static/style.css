@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 * {
     font-family: "VT323", monospace;
-    font-size: 20px;
+    font-size: 30px;
     color: #ffffff;
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@
 .rastro {
     color:#00d434;
     position: absolute;
-    font-size: 20px;
+    font-size: 30px;
     animation: fadeOut 1s forwards; /* Animação para desaparecer gradualmente */
     pointer-events: none; /* Impede que os rastros interfiram com outros elementos */
 }
@@ -27,28 +27,29 @@
 um gif cujo tema provém do filme Matrix */
 body {
     background-image: url("matrix.gif");
+    background-size: 50%;
     background-color: #141e12; /* Fundo escuro inspirado no Matrix */
-    margin: 10px;
+    margin: 15px;
 }
 /* Definições acerca do cabeçalho da página, no qual se encontrará a barra de navegação */
 header {
     background-color: #1f361d81; /* Fundo mais claro, mas ainda escuro */
     color: #ffffff;
-    padding: 20px;
-    margin: 10px;
+    padding: 30px;
+    margin: 15px;
 }
 /* Definições para os títulos h1 e h2 de modo que fique bem grande e legível */
 h1 {
-    font-size: 70px;
-    padding-top: 20px;
+    font-size: 100px;
+    padding-top: 30px;
     color: #ffffff;
 }
 h2 {
-    font-size: 30px;
+    font-size: 40px;
 }
 p {
-    margin: 10px;
-    font-size: 18px;
+    margin: 15px;
+    font-size: 25px;
 }
 /* Estilos para a barra de navegação, a qual terá uma lista não ordenada de tags
 âncora para as páginas do portfólio.
@@ -63,7 +64,7 @@ nav ul {
 }
 nav li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 20px;
 }
 nav a {
     color: #ffffff;
@@ -79,7 +80,7 @@ nav a:hover{
 a imagem quando o usuário deixa o mouse encima*/
 img {
     display: block;
-    margin: 15px;
+    margin: 25px;
     border: 2px solid #00d434; /* Borda verde neon */
     transition: transform 0.5s;
 }
@@ -91,12 +92,12 @@ img:hover {
 .conteudo {
     text-align: center;
     background-color: #141e1259; /* Fundo escuro para as seções */
-    padding-bottom:20px;
+    padding-bottom:30px;
 }
 /* Essa classe eu criei especificamente para a descrição na aba Sobre mim*/
 .descricao{
-    margin-right:100px;
-    margin-left:100px;
+    margin-right:150px;
+    margin-left:150px;
     text-align: justify;
 }
 /* No index inicial eu precisava de um espaçamento maior, então criei essa classe
@@ -104,7 +105,7 @@ com 100px de padding*/
 .conteudo-inicio {
     text-align: center;
     background-color: #141e1259; /* Fundo escuro para as seções */
-    padding: 100px;
+    padding: 180px;
 }
 /* Será usado para organizar os itens na galeria de fotos do Sobre mim,
 na Formação, e no Portfolio. Objetivo do container com display flex
@@ -140,10 +141,10 @@ O sentido da organização é vertical*/
 .flex-container4{
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 520px;
     border:#00d434;
     border-style: solid;
-    height: 480px;
+    height: 680px;
 }
 /* Seletor descendente para separar os parágrafos com pontilhados na parte
 de cima e de baixo na página Formação */
@@ -151,7 +152,7 @@ de cima e de baixo na página Formação */
     border-bottom-style:dotted;
     border-top-style:dotted;
     border-color: #00d434;
-    padding: 10px;
+    padding: 15px;
 }
 /* Seleciona o último elemento da lista ordenada que seja filho direto
 da classe flex-container4 e remove a borda, para que haja simetria
@@ -166,13 +167,14 @@ entre os dois blocos na página Formação */
 .flex-container4 ul{
     list-style-position: inside;
     justify-items: left;
-    padding-left: 30px;
-    padding-bottom: 10px;
+    padding-left: 45px;
+    padding-right: 10px;
+    padding-bottom: 15px;
     border-bottom: #00d434;
     border-bottom-style: solid;
 }
 .flex-container4 ul li{
-    font-size: 16px;
+    font-size: 20px;
     text-align: left;
 }
 /* Estilos para o formulário */
@@ -180,14 +182,14 @@ form {
     display: flex;
     flex-direction: column;
     align-self: center;
-    max-width: 400px;
+    max-width: 500px;
     margin: auto;
     background-color: #2a4f27; /* Fundo do formulário */
-    padding: 30px;
+    padding: 45px;
 }
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     color: #ffffff;
 }
 /* Estilo para que o botão fique em destaque na cor verde neon
@@ -198,18 +200,18 @@ button:hover{
 /* Definições de alguns elementos do formulário */
 input, textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
     border: 1px solid #00d434; /* Bordas verdes */
     background-color: #141e12; /* Fundo escuro */
     color: #ffffff; /* Texto branco */
 }
 button{
-    margin: 15px;
+    margin: 20px;
     align-self: center;
     background-color: #ffffff; /* Fundo do botão */
     color: #000000; /* Texto escuro */
-    padding: 10px 20px;
+    padding: 15px 30px;
     border: none;
 }
 /* Estilos para o botão flutuante na página Contato que redireciona
@@ -217,8 +219,8 @@ o usuário ao meu whatsapp */
 .botao-flutuante {
     border: none; /* Sem borda */
     position: fixed; /* Posição fixa na tela */
-    bottom: 20px; /* Distância da parte inferior */
-    right: 20px; /* Distância da direita */
+    bottom: 50px; /* Distância da parte inferior */
+    right: 50px; /* Distância da direita */
     z-index: 99; /* Garante que o botão fique acima de outros elementos */
     cursor: pointer; /* Cursor de mão ao passar o mouse */
 }
@@ -230,6 +232,6 @@ footer {
     background-color: #2a4f2781; /* Fundo do footer */
     color: #00d434; /* Texto em verde neon */
     text-align: center;
-    padding: 10px;
-    margin: 10px;
+    padding: 15px;
+    margin: 15px;
 }
