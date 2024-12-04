@@ -1,0 +1,235 @@
+/* Estilos gerais: importação e ajuste da fonte e definições de espaçamento */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+* {
+    font-family: "VT323", monospace;
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Classe responsável por estilizar um efeito de rastro no ponteiro do mouse*/
+.rastro {
+    color:#00d434;
+    position: absolute;
+    font-size: 20px;
+    animation: fadeOut 1s forwards; /* Animação para desaparecer gradualmente */
+    pointer-events: none; /* Impede que os rastros interfiram com outros elementos */
+}
+/* Define o roteiro da animação, para que ela dissolva enquanto sobe suavemente*/
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateY(-20px); /* Move o número para cima enquanto desaparece */
+    }
+}
+/* Definições gerais para o corpo da página. Aqui eu utilizei como plano de fundo
+um gif cujo tema provém do filme Matrix */
+body {
+    background-image: url("matrix.gif");
+    background-color: #141e12; /* Fundo escuro inspirado no Matrix */
+    margin: 10px;
+}
+/* Definições acerca do cabeçalho da página, no qual se encontrará a barra de navegação */
+header {
+    background-color: #1f361d81; /* Fundo mais claro, mas ainda escuro */
+    color: #ffffff;
+    padding: 20px;
+    margin: 10px;
+}
+/* Definições para os títulos h1 e h2 de modo que fique bem grande e legível */
+h1 {
+    font-size: 70px;
+    padding-top: 20px;
+    color: #ffffff;
+}
+h2 {
+    font-size: 30px;
+}
+p {
+    margin: 10px;
+    font-size: 18px;
+}
+/* Estilos para a barra de navegação, a qual terá uma lista não ordenada de tags
+âncora para as páginas do portfólio.
+No começo eu optei por lidar primeiramente com os seletores de tipo de elemento
+para que mais tarde caso necessário eu use seletores de classe e seletores descendentes  
+ */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* Aqui utilizei um seletor de pseudo-classe pra definir um comportamento
+especial quando o usuário passar o mouse por um dos links */ 
+nav a:hover{
+    color:#00d434
+  }
+/* Para o tipo de elemento imagem, optei por um estilo que aumenta ligeiramente
+a imagem quando o usuário deixa o mouse encima*/
+img {
+    display: block;
+    margin: 15px;
+    border: 2px solid #00d434; /* Borda verde neon */
+    transition: transform 0.5s;
+}
+img:hover {
+    transform: scale(1.3);
+}
+
+/* Estilos para as seções */
+.conteudo {
+    text-align: center;
+    background-color: #141e1259; /* Fundo escuro para as seções */
+    padding-bottom:20px;
+}
+/* Essa classe eu criei especificamente para a descrição na aba Sobre mim*/
+.descricao{
+    margin-right:100px;
+    margin-left:100px;
+    text-align: justify;
+}
+/* No index inicial eu precisava de um espaçamento maior, então criei essa classe
+com 100px de padding*/
+.conteudo-inicio {
+    text-align: center;
+    background-color: #141e1259; /* Fundo escuro para as seções */
+    padding: 100px;
+}
+/* Será usado para organizar os itens na galeria de fotos do Sobre mim,
+na Formação, e no Portfolio. Objetivo do container com display flex
+é fornecer responsividade para diferentes proporções de tela,
+de modo que os itens se ajustem conforme muda a resolução.
+O sentido da organização e do wrap é horizontal*/
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+/* Sub-container específico para separar em dois blocos as fotos,
+um à esquerda e outro a direita.
+O sentido da organização e do wrap é vertical*/
+.flex-container2{
+    display: flex;
+    flex-direction: column;
+}
+/* Ultimo container na seção Sobre mim que utiliza uma imagem única
+e centralizada.
+O sentido da organização é vertical*/
+.flex-container3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* Container para separar em blocos com bordas e espessuras
+personalizadas os elementos da página Formação.
+O sentido da organização é vertical*/
+.flex-container4{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border:#00d434;
+    border-style: solid;
+    height: 480px;
+}
+/* Seletor descendente para separar os parágrafos com pontilhados na parte
+de cima e de baixo na página Formação */
+.flex-container4 p{
+    border-bottom-style:dotted;
+    border-top-style:dotted;
+    border-color: #00d434;
+    padding: 10px;
+}
+/* Seleciona o último elemento da lista ordenada que seja filho direto
+da classe flex-container4 e remove a borda, para que haja simetria
+entre os dois blocos na página Formação */
+.flex-container4 > ul:last-child{
+    border-style:none;
+}
+.flex-container h2{
+    border:#00d434;
+    border-style: solid;
+}
+.flex-container4 ul{
+    list-style-position: inside;
+    justify-items: left;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    border-bottom: #00d434;
+    border-bottom-style: solid;
+}
+.flex-container4 ul li{
+    font-size: 16px;
+    text-align: left;
+}
+/* Estilos para o formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    max-width: 400px;
+    margin: auto;
+    background-color: #2a4f27; /* Fundo do formulário */
+    padding: 30px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+/* Estilo para que o botão fique em destaque na cor verde neon
+quando o usuário passar o ponteiro do mouse por cima */
+button:hover{
+    background-color:#00d434;
+}
+/* Definições de alguns elementos do formulário */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #00d434; /* Bordas verdes */
+    background-color: #141e12; /* Fundo escuro */
+    color: #ffffff; /* Texto branco */
+}
+button{
+    margin: 15px;
+    align-self: center;
+    background-color: #ffffff; /* Fundo do botão */
+    color: #000000; /* Texto escuro */
+    padding: 10px 20px;
+    border: none;
+}
+/* Estilos para o botão flutuante na página Contato que redireciona
+o usuário ao meu whatsapp */
+.botao-flutuante {
+    border: none; /* Sem borda */
+    position: fixed; /* Posição fixa na tela */
+    bottom: 20px; /* Distância da parte inferior */
+    right: 20px; /* Distância da direita */
+    z-index: 99; /* Garante que o botão fique acima de outros elementos */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+}
+.botao-flutuante img{
+    border:none;
+}
+/* Definições para o rodapé */
+footer {
+    background-color: #2a4f2781; /* Fundo do footer */
+    color: #00d434; /* Texto em verde neon */
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
